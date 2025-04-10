@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+  * {
+    box-sizing: border-box;
+    font-family: "Reem Kufi", sans-serif !important;
+  }
+
+
+  @theme {
+    --color-primary: #181818;
+    --color-primary-dull: #ffffff;
+    --color-secondary: #fe9e0d;
+    --color-tertiary: gray;
+  }
