@@ -1,29 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import ProductItem from './ProductItem';
-import { products } from '../assets/assets';
+import React, { useState } from 'react';
+import Savouries from './Savouries';
+import CakesSweet from './CakesSweet';
+import Lunch from './Lunch';
+import ProductPopup from './ProductPopup'; // import the popup component
 
 const FeaturedProducts = () => {
-  const [featuredProducts, setFeaturedProducts] = useState([]);
-
-  useEffect(() => {
-    setFeaturedProducts(products);
-  }, []);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
-    <div className='my-10 px-4 sm:px-6 md:px-10 lg:px-20'>
-      <div className='text-center py-8 text-3xl'>
-        <h2 className='text text-white'>Cakes & Sweet Treats</h2>
+    <section className="bg-gradient-to-br from-red-100 via-white to-gray-100 py-20 rounded-4xl relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        {/* Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 tracking-tight mb-2">Featured Products</h2>
+          <p className="text-gray-600 text-lg">Discover our top picks – fresh, tasty, and made with love!</p>
+          <div className="mt-4 border-b-4 border-red-500 w-24 mx-auto rounded-full" />
+        </div>
+
+        {/* Product Sections */}
+        <CakesSweet onViewDetails={setSelectedProduct} />
+        <Savouries onViewDetails={setSelectedProduct} />
+        <Lunch onViewDetails={setSelectedProduct} />
       </div>
 
-      {/* Rendering Products */}
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
-        {
-          featuredProducts.map((item, index) => (
-            <ProductItem key={index} id={item.id} image={item.image} name={item.name} price={item.price} />
-          ))
-        }
-      </div>
-    </div>
+      {/* Global Popup Component */}
+      <ProductPopup product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+    </section>
   );
 };
 

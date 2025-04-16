@@ -3,20 +3,20 @@ import ProductItem from './ProductItem';
 import { menu } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
 
-const Savouries = ({ onViewDetails }) => {
+const CakesSweet = ({ onViewDetails }) => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savouriesCategory = menu.find((item) => item.category === "Savouries");
-    const allProducts = savouriesCategory?.subcategories.flatMap(sub => sub.products) || [];
+    const cakesCategory = menu.find((item) => item.category === "Cakes & Sweet Treats");
+    const allProducts = cakesCategory?.subcategories.flatMap(sub => sub.products) || [];
     setFeaturedProducts(allProducts);
   }, []);
 
   return (
     <section className="mb-16">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-2xl font-semibold text-gray-800">Savouries</h3>
+        <h3 className="text-2xl font-semibold text-gray-800">Cakes & Sweets</h3>
         <button
           onClick={() => navigate('/onlineMenu')}
           className="text-secondary hover:underline font-medium text-sm transition duration-200"
@@ -33,7 +33,7 @@ const Savouries = ({ onViewDetails }) => {
             image={item.image}
             name={item.name}
             price={item.price}
-            onViewDetails={() => onViewDetails(item)}
+            onViewDetails={() => onViewDetails(item)} // Trigger popup
           />
         ))}
       </div>
@@ -41,4 +41,4 @@ const Savouries = ({ onViewDetails }) => {
   );
 };
 
-export default Savouries;
+export default CakesSweet;
