@@ -5,6 +5,11 @@ import white from "./white.png";
 import stageCafe from "./stageCafe.jpg";
 import Savouries from "./Savouries1.png";
 import bread from "./bread.jpeg"
+import Catering1 from "./Catering1.jpg"
+import Catering2 from "./Catering2.jpg"
+import Birthday from "./Birthday.png"
+import CupCake from "./CupCake.png"
+import WeddingCake from "./WeddingCake.png"
 
 export const assets = {
   logo1,
@@ -13,7 +18,13 @@ export const assets = {
   white,
   stageCafe,
   Savouries,
-  bread
+  bread,
+  Catering1,
+  Catering2,
+  WeddingCake,
+  CupCake,
+  Birthday
+
 };
 
 export const menu = [

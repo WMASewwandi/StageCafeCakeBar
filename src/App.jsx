@@ -11,6 +11,8 @@ import Footer from './components/Footer'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Product from './pages/Product'
+import CakeQuote from './pages/CakeQuote'
+import CakesGallery from './pages/CakesGallery'
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/product/:id' element={<Product />} />
+        <Route path='/cakeQuote' element={<CakeQuote />} />
+        <Route path='/cakesGallery' element={<CakesGallery />} />
       </Routes>
       <Footer />
     </div>

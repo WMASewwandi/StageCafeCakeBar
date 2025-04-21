@@ -7,7 +7,7 @@ const Cart = () => {
   const [cartData, setCartData] = useState([]);
 
   return (
-    <div className='border-t pt-14'>
+    <div className='border-t pt-14 text-white'>
 
       <div className='text-2xl mb-3'>
         <h2>Cart</h2>
